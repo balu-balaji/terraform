@@ -14,7 +14,7 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo git clone https://github.com/balu-balaji/terraform.git /mywork/terraform/'
+                sh 'cd  /mywork/terraform/;sudo git clone https://github.com/balu-balaji/terraform.git'
             }
         }
         
