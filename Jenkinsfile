@@ -14,18 +14,18 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo rm -r *;sudo git clone https://github.com/balu-balaji/terraform.git'
+                sh 'sudo git clone https://github.com/balu-balaji/terraform.git'
             }
         }
         
         stage('terraform init') {
             steps {
-                sh 'sudo /home/ec2-user/terra/terraform init ./jenkins'
+                sh 'sudo /home/ec2-user/terra/terraform init ./terraform'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./jenkins; sudo /home/ec2-user/terra/terraform plan ./jenkins'
+                sh 'ls ./jenkins; sudo /home/ec2-user/terra/terraform plan ./terraform'
             }
         }
         stage('terraform ended') {
